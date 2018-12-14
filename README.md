@@ -1,24 +1,35 @@
-# preetycode
-`preetycode` is a software to preety print code into a `pdf` file.
+# prettycode
+`prettycode` is a software to pretty print code into a `pdf` file.
+
+![example](prettycode_example.png)
 
 ```
-Usage: preetycode [-h] [-v] [-e | extension (default .py)] [-a | version]
-              [-o |output folder (default "preety")] file
-Converts code into a preety formated pdf
+Usage: prettycode [-h | -v | -s style | -e encoding | -l language | -a message | -o output_folder] FILES
+Converts code into a pretty formated pdf with syntax highlight
 
 Arguments:
-  -h, --help        Show this help
-  -b, --verbose     Explain whats being done
-  -e, --extension   Changes the file extension for the target files
-  -a, --add-version Adds the version number to the header
-  -o, --output      Changes the output folder
-  -V, --version     Shows the software version
+  -h, --help        Show this help.
+  -v, --version     Shows the software version.
+  -s, --style       Choses the stylesheet to use (list below). Default: github.
+  -e, --encoding    Selects the encoding. Default: UTF-8.
+  -l, --language    Selects the language to apply highlight. Default: Autodetect.
+  -a, --add-header  Adds a message to the header of the file. Eg: version number. You can use HTML.
+  -f, --add-footer  Adds a message to the footer of the file. Eg: version number. You can use HTML.
+  -o, --output      Chooses the output folder. Default: .
 ```
 
 ## Dependencies
 
-* [pandoc](http://pandoc.org/)    - markdown to pdf converter
-* [texlive](https://www.tug.org/texlive/)   - TeX typesetting system
+* [node](https://nodejs.org/en/)
+* [npm](https://www.npmjs.com/)
+
+## Installation
+Just install the node dependencies and you are good to go
+```bash
+git clone git@github.com:luxedo/prettycode.git
+cd prettycode
+npm install
+```
 
 ## License
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.

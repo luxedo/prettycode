@@ -1,0 +1,27 @@
+{
+  "name": "prettycode",
+  "version": "1.0.0",
+  "description": "prettycode is a simple software to covert code into pdf",
+  "main": "prettycode.js",
+  "dependencies": {
+    "highlight.js": "^9.13.1",
+    "html-pdf": "^2.2.0",
+    "language-detect": "^1.1.0",
+    "markdown-it": "^8.4.2",
+    "optimist": "^0.6.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luxedo/prettycode.git"
+  },
+  "author": "Luiz Amaral",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/luxedo/prettycode/issues"
+  },
+  "homepage": "https://github.com/luxedo/prettycode#readme"
+}
