@@ -1,8 +1,6 @@
 # prettycode
 `prettycode` is a software to pretty print code into a `pdf` file.
 
-![example](prettycode_example.png)
-
 ```
 Usage: prettycode [-h | -v | -s style | -e encoding | -l language | -a message | -o output_folder] FILES
 Converts code into a pretty formated pdf with syntax highlight
@@ -18,6 +16,13 @@ Arguments:
   -o, --output      Chooses the output folder. Default: .
 ```
 
+Running the command passing itself as argument prints the source code:
+```sh
+./prettycode -a "<b>Preetycode Source</b>" prettycode
+```
+![example](prettycode_example.png)
+
+
 ## Dependencies
 
 * [node](https://nodejs.org/en/)
@@ -29,6 +34,7 @@ Just install the node dependencies and you are good to go
 git clone git@github.com:luxedo/prettycode.git
 cd prettycode
 npm install
+./prettycode FILES
 ```
 
 ## License
