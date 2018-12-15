@@ -20,7 +20,7 @@ Running the command passing itself as argument prints the source code:
 ```sh
 ./prettycode -a "<b>Preetycode Source</b>" prettycode
 ```
-![example](prettycode_example.png)
+![example](https://raw.githubusercontent.com/luxedo/prettycode/master/prettycode_example.png)
 
 
 ## Dependencies
