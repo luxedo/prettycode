@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "prettycode is a simple software to covert code into pdf",
   "main": "prettycode.js",
+  "bin": "./prettycode",
   "dependencies": {
     "highlight.js": "^9.13.1",
     "language-detect": "^1.1.0",
