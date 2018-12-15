@@ -1,5 +1,5 @@
-#!/bin/node
- //
+#!/usr/bin/env node
+//
 //    Opens a file or a folder and creates the prettyfied code
 //
 //    This program is free software: you can redistribute it and/or modify
@@ -22,7 +22,6 @@ const fs = require("fs");
 const hljs = require("highlight.js");
 const markdown = require("markdown-it");
 const path = require("path");
-const pdf = require("html-pdf");
 const puppeteer = require("puppeteer");
 
 let args = require("optimist").argv;
