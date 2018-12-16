@@ -29,12 +29,16 @@ Running the command passing itself as argument prints the source code:
 * [npm](https://www.npmjs.com/)
 
 ## Installation
-Just install the node dependencies and you are good to go
+Clone the repo, install the node dependencies and you are good to go
 ```bash
 git clone git@github.com:luxedo/prettycode.git
 cd prettycode
 npm install
 ./prettycode FILES
+```
+Or you can install via `npm`
+```bash
+npm install -g prettycode
 ```
 
 ## License
