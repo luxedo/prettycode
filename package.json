@@ -1,9 +1,9 @@
 {
   "name": "prettycode",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "prettycode is a simple software to covert code into pdf",
-  "main": "prettycode.js",
-  "bin": "./prettycode",
+  "main": "./lib/index.js",
+  "bin": "./bin/prettycode",
   "dependencies": {
     "highlight.js": "^9.13.1",
     "language-detect": "^1.1.0",
@@ -13,7 +13,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": " node test/test.js"
   },
   "repository": {
     "type": "git",
@@ -25,5 +25,9 @@
     "url": "https://github.com/luxedo/prettycode/issues"
   },
   "homepage": "https://github.com/luxedo/prettycode#readme",
-  "keywords": ["code", "pdf", "converter"]
+  "keywords": [
+    "code",
+    "pdf",
+    "converter"
+  ]
 }

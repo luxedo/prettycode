@@ -1,0 +1,62 @@
+#!/usr/bin/env node
+//
+//    Opens a file or a folder and creates the prettyfied code
+//
+//    This program is free software: you can redistribute it and/or modify
+//    it under the terms of the GNU General Public License as published by
+//    the Free Software Foundation, either version 3 of the License, or
+//    (at your option) any later version.
+//
+//    This program is distributed in the hope that it will be useful,
+//    but WITHOUT ANY WARRANTY; without even the implied warranty of
+//    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//    GNU General Public License for more details.
+//
+//    You should have received a copy of the GNU General Public License
+//    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+const fs = require("fs");
+const path = require("path");
+const pc = require("prettycode");
+
+let args = require("optimist").argv;
+let help = `Usage: prettycode [-h | -v | -s style | -e encoding | -l language | -a message | -o output_folder] FILES
+Converts code into a pretty formated pdf with syntax highlight
+
+Arguments:
+  -h, --help        Show this help.
+  -v, --version     Shows the software version.
+  -s, --style       Choses the stylesheet to use (list below). Default: github.
+  -e, --encoding    Selects the encoding. Default: UTF-8.
+  -l, --language    Selects the language to apply highlight. Default: Autodetect.
+  -a, --add-header  Adds a message to the header of the file. Eg: version number. You can use HTML.
+  -f, --add-footer  Adds a message to the footer of the file. Eg: version number. You can use HTML.
+  -o, --output      Chooses the output folder. Default: .
+
+Available Stylesheets:
+`;
+let cssFiles = fs.readdirSync(`${__dirname}/../node_modules/highlight.js/styles`);
+cssFiles.filter((file => file.endsWith(".css"))).map(file => {
+  help += `    *${file.substr(0, file.length-4)}\n`;
+});
+
+if ((args.v) || (args.version)) {
+  console.log(pc.VERSION);
+  process.exit(0);
+} else if ((args.h) || (args.help) || args._.length === 0) {
+  console.log(help);
+  process.exit(0);
+}
+
+const options = {
+  style: args.s || args.style || "github",
+  encoding: args.e || args.encoding || "utf-8",
+  language: args.l || args.language || "",
+  addHeader: args.a || args["add-header"] || "",
+  addFooter: args.f || args["add-footer"] || "",
+  output: args.o || args.output || ".",
+};
+
+args._.map(file => {
+  const fileName = path.basename(file);
+  pc(fileName, options);
+});
